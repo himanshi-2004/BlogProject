@@ -1,0 +1,14 @@
+<%- include('./header.ejs') %>
+<section class="cmspage mtb-40">
+    <div class="container">
+      <h1>About</h1>
+      <div class="page-desc">
+        <% data.forEach((item)=>{ %>
+          <img src="<%= item.image.url %>" alt="">
+          <p><%= item.about %></p>
+        <% }) %>
+     
+      </div>
+    </div>
+</section>
+<%- include('./footer.ejs') %>

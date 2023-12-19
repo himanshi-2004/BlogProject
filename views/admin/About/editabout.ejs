@@ -1,0 +1,55 @@
+<%- include('../../header.ejs') %>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                            <li><a href="/admin/blog/displayblog">Blogs</a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                          <div class="dash-title">
+                              <h1>Create Blog</h1>
+                          </div>
+                        </div>
+                        <div class="blog-form">
+                          <form action="/admin/about/updateabout/<%= data._id %>" method="post" enctype="multipart/form-data">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">About <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <textarea name="about" rows="5" class="form-control" placeholder="About" required><%= data.about %></textarea>
+                                </div>
+                            </div>
+                            
+                             <div class="form-group form-row">
+                              <label class="col-md-3">Upload Image</label>
+                              <div class="col-md-9">
+                                <input type="file"  name="image"/>
+                              </div>
+                            </div> 
+                            <img src="<%= data.image.url %>" width="100px" alt="">
+                           
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                  <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../../footer.ejs') %>
