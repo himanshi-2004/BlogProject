@@ -10,6 +10,7 @@ cloudinary.config({
 });
 
 
+
 class AboutController{
        static createabout = async(req,res)=>{
            try{
@@ -21,6 +22,7 @@ class AboutController{
        }
        static insertabout = async(req,res)=>{
         try{
+
                      const {about} = req.body
                      const file = req.files.image
                      const myimage = await cloudinary.uploader.upload(file.tempFilePath,{
